@@ -1,3 +1,5 @@
+package firstApp;
+
 import java.util.Scanner;
 
 public class Loop {
