@@ -1,4 +1,4 @@
-package JavaPOO.MoviePackage;
+package javaPOO.moviePackage;
 
 import java.util.ArrayList;
 

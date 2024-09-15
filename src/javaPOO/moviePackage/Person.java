@@ -1,4 +1,4 @@
-package JavaPOO.MoviePackage;
+package javaPOO.moviePackage;
 
 public class Person {
     private final String name;
