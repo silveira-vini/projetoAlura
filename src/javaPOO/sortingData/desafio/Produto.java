@@ -1,6 +1,6 @@
 package javaPOO.sortingData.desafio;
 
-public class Produto implements Comparable<Produto> {
+public class Produto implements Comparable<Produto>{
     String nome;
     double valor;
 
@@ -18,15 +18,14 @@ public class Produto implements Comparable<Produto> {
     }
 
     @Override
-    public int compareTo(Produto o) {
-        return 0;
+    public String toString() {
+        return String.format("""
+                Produto: %s - Valor: %.2f
+                """, this.nome, this.valor);
     }
 
     @Override
-    public String toString() {
-        return String.format("""
-                Produto: %s
-                Valor: %.2f
-                """, this.nome, this.valor);
+    public int compareTo(Produto o) {
+        return Double.compare(this.getValor(), o.getValor());
     }
 }
