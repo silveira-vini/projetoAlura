@@ -10,7 +10,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
-public class App {
+public class Buscador {
     public static void main(String[] args) throws Exception {
 
         Scanner entry = new Scanner(System.in);
@@ -52,11 +52,12 @@ public class App {
 
                     String json = response.body();
                     Address a1 = gson.fromJson(json, Address.class);
+                    FileMaker.makeFile(json);
 
                     System.out.println(a1.toString());
 
-                } catch (IOException | IllegalArgumentException e) {
-                    throw new Exception(e.getMessage());
+                } catch (Exception e) {
+                    throw new RuntimeException("Não consegui obter endereço a partir dessa requisição");
                 }
 
             } else if (option == 2) {
@@ -90,8 +91,8 @@ public class App {
                     System.out.println("Endereços localizados:");
                     System.out.println(json);
 
-                } catch (IOException | IllegalArgumentException e) {
-                    throw new Exception(e.getMessage());
+                } catch (Exception e) {
+                    throw new RuntimeException("Não consegui obter endereço a partir dessa requisição");
                 }
                 System.out.println("");
 
